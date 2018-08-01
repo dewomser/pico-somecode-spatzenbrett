@@ -1,37 +1,35 @@
 ---
 Title: Spatzenbrett
 Description: Das Spatzenbrett ist ein Helfer um Inhalte besser in Twitter zu präsentieren.
-image: beispielbild.png
-Date: 01.07.2018
-author: Stefan Höhn
+url_image: /sites/yourtheme/assets
+image: image.png
+Date: 2018/07/01
+author: yourname
 twitter_txt: Ein Helfer zum Vertwittern von Inhalten mit großem Bild
 social:
     - title: Besuch mich auf GitHub
-      url: https://github.com/dewomser
+      url: https://github.com/yourname
       icon: github
     - title: Schick mir einen Tweet
-      url: https://twitter.com/dewomser
+      url: https://twitter.com/yourname
       icon: twitter
     - title: bin bei google+
-      url: https://plus.google.com/+StefanH%C3%B6hn
+      url: https://plus.google.com/+yourname
       icon: gplus
 ---
 
-## Uberschrift 
+## Erweitertes Twittern mit Bild
+![Nextcloud Logo;das Brett](%meta.url_image%/%meta.image%)
+## Willkommen auf dem Spatzenbrett
+Das Spatzenbrett beruht auf der **Nextcloud App** des Contentmanagementsystems von [Pico](http://picocms.org/). Wird die URL bei Twitter verlinkt, erscheint die Webseite dort als twittercard.
+%meta.description% <!-- replaced by the above Description meta header -->
+Das Spatzenbrett **Template und Theme** gibt es jetzt bei [Github](https://github.com/dewomser/pico-somecode-spatzenbrett)
 
-![Image Title](%base_url%/assets/%meta.image%)
+Hinweis: Twitter akzeptiert zur Zeit keine Umlautdomains für den Card-service. Der Punycode wird aber genommen. Beispiel:
+https://nc.xn--stefan-hhn-lcb.de/sites/spatzenbrett/
 
-Text blabla … **fett**
-%meta.description% Schreibt description hin
+Dieses CMS liegt auf einem V-Server bei Strato. Betriebssystem ist **Linux /Debian 8.x** 
 
-[untergang.de](https://untergang.de) Ein Link
 
-### Variablen ###
-* Bitte Datum Eintragen zur Sortierung der Menue-einträge
-* twitter_txt Voreingestellter Text zum vertwittern
-* image ist das Bild für die Twittercard.
-* social: ist ein array wird im Fuß der Webseite angezeigt
-* author: unwichtig  Wird im Fuß angezeigt
-* Description: Nicht nur der Metatag sondern auch der Text für die Twittercard
-* title: dito
+
 

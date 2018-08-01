@@ -1,25 +1,26 @@
 ---
 Title: unterbrett
 Description: Beschreibung hier rein schreiben.
+url_image: /sites/yourtheme/assets
 image: beispielbild.png
 Date: 01.07.2018   
-author: Stefan Höhn
+author: yourname
 twitter_txt: Ein Helfer zum Vertwittern von Inhalten mit großem Bild im sub folder
 social:
     - title: Besuch mich auf GitHub   
-      url: https://github.com/dewomser
+      url: https://github.com/yourname
       icon: github 
     - title: Schick mir einen Tweet    
-      url: https://twitter.com/dewomser
+      url: https://twitter.com/yourname
       icon: twitter
     - title: bin bei google+
-      url: https://plus.google.com/+StefanH%C3%B6hn
+      url: https://plus.google.com/+yourname
       icon: gplus  
 ---
 
 ## Uberschrift  Ordner sub                 
 
-![Image Title](%base_url%/assets/%meta.image%)                                                        
+ ![Menueeintrag yacy](%meta.url_image%/%meta.image% "some meaningfull text")                                                      
 
 Text blabla …    das ist ein sub.txt aus dem Ordner sub **Beispiel**
 %meta.description% Schreibt description hin                         

@@ -280,7 +280,7 @@ input[type="checkbox"]+label, input[type="radio"]+label {
   padding-top: 5rem;
   opacity: 0;
   overflow-x: hidden;
-  background-color: #4e4e4e;
+  background-color: #0095df;
   transition: 0.2s;
 }
 

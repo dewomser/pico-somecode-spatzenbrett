@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ current_page.author }}">
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@dewomser" />
-    <meta name="twitter:creator" content="@dewomser" />
-
-    <meta property="og:url" content="https://foo.bar.de{{ base_url }}" />
-    <meta property="og:image" content="https://foo.bar.de{{ base_url }}/assets/{{meta.image}}" />
-
-
+    <meta name="twitter:site" content="@twittername" />
+    <meta name="twitter:creator" content="@twittername" />
+    <meta name="google-site-verification" content="get your hash at google os delete this line" />
+    <meta property="og:url" content="{{ config.url_long }}/{{ current_page.id }}" />
+    <meta property="og:image" content="{{config.url_long }}/assets/{{meta.image}}" />
     <title>{% if meta.title %}{{ meta.title }} - {% endif %}{{ site_title }}</title>
     <meta property="og:title" content="{{ meta.title }} - {{ site_title }}" />
-
      {% if meta.description %}
       <meta name="description" content="{{ meta.description|striptags }}">
       <meta property="og:description" content="{{ meta.description|striptags }}">
@@ -23,18 +20,45 @@
      {% if meta.date %}
       <meta name="date" content="{{ meta.date }}">
      {% endif %}
-
      {% if meta.robots %}
       <meta name="robots" content="{{ meta.robots }}">
      {% endif %}
-    <link href="{{ base_url }}/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link href="{{ url_long }}/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="{{ theme_url }}/assets/css/normalize.css">
     <link rel="stylesheet" href="{{ theme_url }}/assets/css/highlight-default.css">
     <link rel="stylesheet" href="{{ theme_url }}/assets/css/somecode.css">
     <link rel="stylesheet" href="{{ theme_url }}/dewomser.css" type="text/css" />
 
-	
 
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Article",
+  "name" : "{{ meta.title }}",
+  "author" : {
+    "@type" : "Person",
+    "name" : "{{ current_page.author }}",
+    "url" : "https://xn--stefan-hhn-lcb.de",
+    "sameAs" : [
+    "https://twitter.com/yourname",
+    "https://github.com/yourname",
+    "https://plus.google.com/+yourname"
+]
+  },
+  "datePublished" : "{{ meta.date }}",
+  "headline" : "{{ meta.description|striptags }}",
+  "image" : "{{ config.url_long }}/assets/{{ meta.image }}",
+  "articleSection" : "{{ content|striptags }}",
+  "url" : "{{ config.url_long }}/{{ current_page.id }}",
+  
+ "publisher" : {
+    "@type" : "Organization",
+    "name" : "Linux und Technik",
+    "url" : "https://www.publisher-example.de",
+    "logo": "https://www.publisher-example.de/images/logo.png"	
+  }
+}
+</script>
 
   </head>
 
@@ -42,9 +66,13 @@
     <main id="main-wrapper">
       <nav class="navigation">
         <div class="navbrand">
-          <a href="{{ "index"|link }}">
+          <a href="{{ config.url }}">
             <h1>{{ site_title }}</h1>
           </a>
+<span style="padding-left: 100px">
+<a href="{{ config.url }}/{{ prev_page.id }}" title="{{ prev_page.title }}"><h1><</h1></a>
+<a href="{{ config.url }}/{{ next_page.id }}" title="{{ next_page.title }}"><h1>></h1></a>
+</span>
           <a class="openbtn" onclick="openNav()">&#9776;</a>
         </div>
         <div id="ovnav" class="navmenu">
@@ -52,7 +80,7 @@
           <ul>
             {% for page in pages if page.title %}
               <li{% if page.id == current_page.id %} class="active" {% endif %}>
-                <a href="{{ page.url }}">{{ page.title }}</a>
+                <a href="{{ config.url }}/{{ page.id }}">{{ page.title }}</a>
               </li>
             {% endfor %}
           </ul>
